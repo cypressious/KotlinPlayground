@@ -1,13 +1,13 @@
 package com.cypressworks.kotlinplayground
 
-import android.app.Activity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import javax.inject.Inject
 import kotlin.properties.Delegates
 
-public class MainActivity : Activity() {
+public class MainActivity : AppCompatActivity() {
 
     var foo: Foo by Delegates.notNull()
         @Inject set
