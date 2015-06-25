@@ -19,6 +19,7 @@ public class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         MyApplication.component.inject(this)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

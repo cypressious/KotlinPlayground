@@ -24,7 +24,6 @@ public class MyApplication extends Application {
             this.context = context.getApplicationContext();
         }
 
-
         @Provides
         Context provideContext() {
             return context;
