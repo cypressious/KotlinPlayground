@@ -1,7 +1,10 @@
 buildscript {
-    ext.kotlin_version = '0.12.412'
+    ext.kotlin_version = '0.1-SNAPSHOT'
     repositories {
         jcenter()
+        maven {
+            url 'http://oss.sonatype.org/content/repositories/snapshots'
+        }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -9,8 +12,16 @@ buildscript {
     }
 }
 
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
 repositories {
     jcenter()
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
 }
 
 apply plugin: 'com.android.application'
@@ -32,6 +43,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+        }
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -44,9 +57,7 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.google.dagger:dagger:2.0'
-    compile 'io.realm:realm-android:0.81.1'
     kapt 'com.google.dagger:dagger-compiler:2.0'
-    kapt 'io.realm:realm-android:0.81.1'
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
 }
