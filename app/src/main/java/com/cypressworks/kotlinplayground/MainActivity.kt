@@ -5,7 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Button
+import android.view.View
+import kotlinx.android.synthetic.activity_main.button1
 import kotlinx.android.synthetic.activity_main.editText1
 import kotlinx.android.synthetic.activity_main.editText2
 import java.io.Serializable
@@ -20,7 +21,7 @@ public class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         MyApplication.component.inject(this)
 
-        findViewById(R.id.button1).setOnClickListener {
+        button1.setOnClickListener {
             buildIntent<TestActivity>()
                     .putExtra(TestActivity::aaa, editText1.getText().toString())
                     .putExtra(TestActivity::b, editText2.getText().toString())
