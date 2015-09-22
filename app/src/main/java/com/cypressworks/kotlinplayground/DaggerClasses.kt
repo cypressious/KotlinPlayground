@@ -7,8 +7,8 @@ class Foo @Inject constructor(
         val c: Context,
         val b: Bar
 ) {
-    fun bar() {
-        println("Hello from Foo")
+    fun bar(): String {
+        return "Hello from Foo"
     }
 }
 
