@@ -1,5 +1,6 @@
 package com.cypressworks.kotlinplayground
 
+import android.animation.LayoutTransition
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.activity_main.button1
 import kotlinx.android.synthetic.activity_main.editText1
 import kotlinx.android.synthetic.activity_main.editText2
+import kotlinx.android.synthetic.activity_main.rootLayout
 import java.io.Serializable
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty1
@@ -31,6 +33,8 @@ public class MainActivity : AppCompatActivity() {
         }
 
         hashMapOf("foo" to "bar") += "a" to "b"
+
+        setTransitionType(rootLayout, LayoutTransition.CHANGING)
     }
 
 }
