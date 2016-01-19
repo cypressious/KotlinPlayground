@@ -39,5 +39,7 @@ public class MyApplication extends Application {
         component = DaggerMyApplication_AppComponent.builder() //
                 .appModule(new AppModule(this)) //
                 .build();
+
+        System.out.println();
     }
 }

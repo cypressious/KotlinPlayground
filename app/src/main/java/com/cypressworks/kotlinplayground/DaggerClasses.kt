@@ -7,13 +7,10 @@ class Foo @Inject constructor(
         val c: Context,
         val b: Bar
 ) {
-    fun bar(): String {
-        return "Hello from Foo"
-    }
+
+    fun bar() = "Hello from Foo"
 }
 
 class Bar @Inject constructor() {
-    fun hello() {
-        println("Hello from Bar")
-    }
+    fun hello() = "Hello from Bar"
 }
